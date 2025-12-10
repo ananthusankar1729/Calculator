@@ -35,14 +35,23 @@ function display() {
     let btnOp = document.querySelectorAll(".operation");
     btnOp.forEach(btnOp => {
         btnOp.addEventListener("click", () =>{
+            let x = Number(disp.textContent);
+            let op = btnOp.textContent;
             disp.textContent += btnOp.textContent;
+            console.log(x);
+            console.log(op);
         })
     })
     let btnCl = document.querySelector(".clear");
     btnCl.addEventListener("click", ()=>{
         disp.textContent = "";
     })
+    let btnEq = document.querySelector(".equalto");
+    btnEq.addEventListener("click");
+    
+
     
 }
 display();
+
 
