@@ -12,16 +12,16 @@ function divide(a,b) {
 };
 function operate(operator, a, b) {
     if (operator=="+") {
-        return add(a,b);
+         add(a,b);
     }
     if (operator=="-") {
-        return subtract(a,b);
+         subtract(a,b);
     }
     if (operator=="*") {
-        return multiply(a,b);
+         multiply(a,b);
     }
     if (operator=="/") {
-        return divide(a,b);
+         divide(a,b);
     }
 }
 function display() {
@@ -37,7 +37,7 @@ function display() {
         btnOp.addEventListener("click", () =>{
             let x = Number(disp.textContent);
             let op = btnOp.textContent;
-            disp.textContent += btnOp.textContent;
+            disp.textContent = "";
             console.log(x);
             console.log(op);
         })
@@ -45,10 +45,16 @@ function display() {
     let btnCl = document.querySelector(".clear");
     btnCl.addEventListener("click", ()=>{
         disp.textContent = "";
+        // x = null;
+        // op = null;
     })
     let btnEq = document.querySelector(".equalto");
-    btnEq.addEventListener("click");
-    
+    btnEq.addEventListener("click",()=>{
+        let y =  Number(disp.textContent);
+        disp.textContent = "";
+        
+    });
+
 
     
 }
