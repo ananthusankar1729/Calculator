@@ -24,15 +24,25 @@ function operate(operator, a, b) {
         return divide(a,b);
     }
 }
-// function display(x) {
-//     let btn = document.querySelectorAll(".digits");
-//     btn.forEach(btn => {
-//         btn.addEventListener("click", () => {
-//             let x = Number(btn.textContent);
-//         })
-//     })
-//     let btnOp = document.querySelectorAll
-
+function display() {
+    let btn = document.querySelectorAll(".digits");
+    let disp = document.querySelector(".disp");
+    btn.forEach(btn => {
+        btn.addEventListener("click", () => {
+            disp.textContent += btn.textContent;
+        })
+    })
+    let btnOp = document.querySelectorAll(".operation");
+    btnOp.forEach(btnOp => {
+        btnOp.addEventListener("click", () =>{
+            disp.textContent += btnOp.textContent;
+        })
+    })
+    let btnCl = document.querySelector(".clear");
+    btnCl.addEventListener("click", ()=>{
+        disp.textContent = "";
+    })
     
+}
+display();
 
-// }
