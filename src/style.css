@@ -19,17 +19,18 @@ button{
     width: 30px;
 } */
 .container {
-  max-width: 360px;
-  margin: 40px auto;
-  padding: 12px;
-  box-sizing: border-box;
-}
+  max-width: 250px;
+  margin: 50px auto;
+  padding: 10px;
 
 .box {
   display: flex;
   flex: 1 1 auto;/* space between buttons */
   flex-wrap: nowrap;
   flex-direction: column;
+}
+.box2{
+  display: flex;
 }
 
 /* Make every button fill its grid cell and look consistent */
@@ -49,7 +50,10 @@ button{
 
 .box .equalto {
   grid-column: span 2;
-  background: #4caf50;
+  background: green;
   color: white;
 }
-.box .clear { background: #e74c3c; color: white; }
+.box .clear { 
+  background: red; 
+  color: white; 
+}
