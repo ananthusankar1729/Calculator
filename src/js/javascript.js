@@ -12,21 +12,25 @@ function divide(a,b) {
 };
 function operate(operator, a, b) {
     if (operator=="+") {
-         add(a,b);
+        return add(a,b);
     }
     if (operator=="-") {
-         subtract(a,b);
+        return subtract(a,b);
     }
-    if (operator=="*") {
-         multiply(a,b);
+    if (operator=="x") {
+        return multiply(a,b);
     }
     if (operator=="/") {
-         divide(a,b);
+        return divide(a,b);
     }
 }
 function display() {
     let btn = document.querySelectorAll(".digits");
     let disp = document.querySelector(".disp");
+    let x = null;
+    let op = null;
+    let y = null;
+    let ans = null;
     btn.forEach(btn => {
         btn.addEventListener("click", () => {
             disp.textContent += btn.textContent;
@@ -35,8 +39,8 @@ function display() {
     let btnOp = document.querySelectorAll(".operation");
     btnOp.forEach(btnOp => {
         btnOp.addEventListener("click", () =>{
-            let x = Number(disp.textContent);
-            let op = btnOp.textContent;
+            x = Number(disp.textContent);
+            op = btnOp.textContent;
             disp.textContent = "";
             console.log(x);
             console.log(op);
@@ -50,9 +54,15 @@ function display() {
     })
     let btnEq = document.querySelector(".equalto");
     btnEq.addEventListener("click",()=>{
-        let y =  Number(disp.textContent);
-        disp.textContent = "";
+        y =  Number(disp.textContent);
+        console.log(y)
+        ans = operate(op, x, y);
+        disp.textContent = ans;
+        console.log(ans)
+        op = null;
+        y = null;
         
+
     });
 
 
