@@ -52,8 +52,9 @@ function display() {
     let btnCl = document.querySelector(".clear");
     btnCl.addEventListener("click", ()=>{
         disp.textContent = "";
-        // x = null;
-        // op = null;
+        x = null;
+        op = null;
+        y = null;
     })
     let btnEq = document.querySelector(".equalto");
     btnEq.addEventListener("click",()=>{
