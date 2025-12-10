@@ -26,10 +26,10 @@ button{
 }
 
 .box {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
-  gap: 8px;                /* space between buttons */
-  align-items: stretch;
+  display: flex;
+  flex: 1 1 auto;/* space between buttons */
+  flex-wrap: nowrap;
+  flex-direction: column;
 }
 
 /* Make every button fill its grid cell and look consistent */
