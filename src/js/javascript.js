@@ -12,15 +12,27 @@ function divide(a,b) {
 };
 function operate(operator, a, b) {
     if (operator=="+") {
-        add(a,b);
+        return add(a,b);
     }
     if (operator=="-") {
-        subtract(a,b);
+        return subtract(a,b);
     }
     if (operator=="*") {
-        multiply(a,b);
+        return multiply(a,b);
     }
     if (operator=="/") {
-        divide(a,b);
+        return divide(a,b);
     }
 }
+// function display(x) {
+//     let btn = document.querySelectorAll(".digits");
+//     btn.forEach(btn => {
+//         btn.addEventListener("click", () => {
+//             let x = Number(btn.textContent);
+//         })
+//     })
+//     let btnOp = document.querySelectorAll
+
+    
+
+// }
