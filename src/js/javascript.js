@@ -34,6 +34,7 @@ function display() {
     let op = null;
     let y = null;
     let ans = null;
+    let i = 0;
     btn.forEach(btn => {
         btn.addEventListener("click", () => {
             disp.textContent += btn.textContent;
@@ -42,9 +43,18 @@ function display() {
     let btnOp = document.querySelectorAll(".operation");
     btnOp.forEach(btnOp => {
         btnOp.addEventListener("click", () =>{
-            x = Number(disp.textContent);
-            op = btnOp.textContent;
-            disp.textContent = "";
+            if (i>0) {
+                y = Number(disp.textContent);
+                op = btnOp.textContent;
+                x = Number(operate(op,x,y));
+                disp.textContent = "";
+            }
+            else{
+                x = Number(disp.textContent);
+                op = btnOp.textContent;
+                disp.textContent = "";
+            }
+            i = i + 1;
             console.log(x);
             console.log(op);
         })
@@ -62,15 +72,13 @@ function display() {
         console.log(y)
         ans = operate(op, x, y);
         disp.textContent = ans;
-        console.log(ans)
+        console.log(ans);
         op = null;
         y = null;
+        i = 0;
         
 
     });
-
-
-    
 }
 display();
 
